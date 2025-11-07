@@ -1,5 +1,5 @@
-import axios from "axios";
 import React from "react";
+import { axiosSecure } from "../../Hooks/useAuth";
 
 const Home = () => {
   const handleSubmit = (e) => {
@@ -16,9 +16,9 @@ const Home = () => {
       password: password,
     };
 
-    axios
-      .post("http://localhost:3000/products", newUsers)
-      .then((data) => console.log(data.data));
+    axiosSecure.post("/products", newUsers).then((data) => {
+      console.log(data.data);
+    });
   };
 
   return (

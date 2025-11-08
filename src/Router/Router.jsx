@@ -2,6 +2,11 @@ import { createBrowserRouter } from "react-router";
 import RootLayout from "../Main Layout/RootLayout";
 import Errorpage from "../Pages/Errorpage/Errorpage";
 import Home from "../Components/Home/Home";
+import Login from "../Firebase/Login/Login";
+import Register from "../Firebase/Register/Register";
+import AllProducts from "../Pages/AllProducts/AllProducts";
+import Bids from "../Pages/Bids/Bids";
+import CreateProducts from "../Pages/CreateProducts/CreateProducts";
 
 export const router = createBrowserRouter([
   {
@@ -12,6 +17,26 @@ export const router = createBrowserRouter([
         index: true,
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/all-products",
+        element: <AllProducts></AllProducts>,
+      },
+      {
+        path: "/bids",
+        element: <Bids></Bids>,
+      },
+      {
+        path: "/create-product",
+        element: <CreateProducts></CreateProducts>,
       },
     ],
   },

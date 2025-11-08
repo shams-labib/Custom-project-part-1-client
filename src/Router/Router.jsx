@@ -7,6 +7,7 @@ import Register from "../Firebase/Register/Register";
 import AllProducts from "../Pages/AllProducts/AllProducts";
 import Bids from "../Pages/Bids/Bids";
 import CreateProducts from "../Pages/CreateProducts/CreateProducts";
+import Products from "../Components/products/Products";
 
 export const router = createBrowserRouter([
   {
@@ -28,7 +29,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/all-products",
-        element: <AllProducts></AllProducts>,
+        element: <Products></Products>,
       },
       {
         path: "/bids",

@@ -3,7 +3,15 @@ import { Link, NavLink } from "react-router";
 import { AuthContext } from "../../Firebase/AuthContext";
 
 const Navbar = () => {
-  const { user, loading } = useContext(AuthContext);
+  const { user, loading, signOutUser } = useContext(AuthContext);
+
+  const handleSignOut = () => {
+    signOutUser()
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => console.log(err));
+  };
 
   const links = (
     <>
@@ -105,6 +113,7 @@ const Navbar = () => {
             <p>Loading</p>
           ) : user ? (
             <Link
+              onClick={handleSignOut}
               to={"/login"}
               className="btn bg-gradient-to-r from-red-400 to-gray-400 text-white 
               hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 
